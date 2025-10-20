@@ -1,667 +1,372 @@
-# 🚀 AI-Powered Cypress Test Pyramid Architect
+# 🤖 AI-Driven Test Categorization
 
-<div align="center">
+## 🎯 Overview
+This project demonstrates an AI-optimized approach to Cypress test automation, implementing intelligent test categorization and the Test Pyramid principle for optimal test coverage and maintenance.
 
-![Cypress](https://img.shields.io/badge/Cypress-17202C?style=for-the-badge&logo=cypress&logoColor=white)
-![AI](https://img.shields.io/badge/AI--Powered-FF6B6B?style=for-the-badge&logo=openai&logoColor=white)
-![Test Automation](https://img.shields.io/badge/Test_Automation-4CAF50?style=for-the-badge&logo=testinglibrary&logoColor=white)
+## 🧠 AI-Driven Test Design
+The test suite is automatically organized and optimized using AI principles to:
+- 📊 Categorize tests based on purpose and scope
+- 🎯 Apply appropriate tags and priorities
+- 🔄 Maintain optimal test distribution
+- 🏗️ Follow the Test Pyramid architecture
 
-**Transform weeks of test reorganization into minutes with AI-driven automation**
-
-[Features](#-features) • [Quick Start](#-quick-start) • [Test Categories](#-test-categories) • [Execution](#-running-tests) • [Author](#-author)
-
-</div>
-
----
-
-## 🎯 The Problem We Solve
-
-### ⏰ Before AI (Traditional Approach)
-```
-📁 Existing Cypress Project
-├─ ❌ 100+ unorganized test files
-├─ ❌ Mixed test types (unit/integration/e2e)
-├─ ❌ No priority categorization
-├─ ❌ Unclear smoke/sanity/regression separation
-├─ ❌ Long CI/CD execution times
-└─ ⏱️  2-3 WEEKS to manually reorganize
-```
-
-### ✨ After AI (This Framework)
-```
-📁 AI-Optimized Cypress Framework
-├─ ✅ Auto-categorized test pyramid structure
-├─ ✅ Smart priority tagging (P0-P4)
-├─ ✅ Organized smoke/sanity/regression tests
-├─ ✅ Optimized execution strategies
-├─ ✅ Reduced CI/CD time by 70%
-└─ ⚡ 30 MINUTES with AI prompt
-```
-
-> **🎯 Key Insight:** What takes weeks manually, AI accomplishes in minutes by analyzing test patterns, dependencies, and execution characteristics.
-
----
-
-## 🌟 Features
-
-<table>
-<tr>
-<td width="50%">
-
-### 🤖 AI-Driven Intelligence
-- 🧠 **Smart Test Analysis** - Automatically categorizes existing tests
-- 🎯 **Priority Assignment** - P0-P4 based on business impact
-- 📊 **Pyramid Distribution** - 70% Unit, 20% Integration, 10% E2E
-- 🏷️ **Auto-Tagging** - Smoke, Sanity, Regression classification
-- ⚡ **Execution Optimization** - Reduces test suite runtime by 70%
-
-</td>
-<td width="50%">
-
-### 🏗️ Framework Benefits
-- 📁 **Crystal Clear Structure** - Organized folder hierarchy
-- 🔄 **Easy Maintenance** - Page Object Model pattern
-- 🚀 **Fast Feedback** - Run only what you need
-- 📈 **Scalable Design** - Grows with your application
-- 🎭 **Multiple Test Types** - Unit, Integration, E2E support
-
-</td>
-</tr>
-</table>
-
----
-
-## 🏗️ AI-Optimized Project Structure
-
+## 🏗️ Project Structure
 ```
 cypress/
-│
-├─ 🔥 e2e/
-│  │
-│  ├─ 💨 smoke/                    # P0 - Critical Path (2-5 min)
-│  │  ├─ app.smoke.cy.js          # @smoke @p0 @e2e
-│  │  ├─ auth.smoke.cy.js         # App loads, login works
-│  │  └─ criticalPath.smoke.cy.js # Payment gateway reachable
-│  │
-│  ├─ 🔍 sanity/                   # P1 - Feature Validation (10-15 min)
-│  │  ├─ cart.sanity.cy.js        # @sanity @p1 @integration
-│  │  ├─ checkout.sanity.cy.js    # Core features work
-│  │  └─ login.sanity.cy.js       # Recent changes validated
-│  │
-│  └─ 📊 regression/               # P2-P4 - Comprehensive (1-2 hours)
-│     │
-│     ├─ unit/                     # 70% - Fast & Isolated (<100ms)
-│     │  ├─ pages/
-│     │  │  ├─ CartPage.unit.cy.js      # @regression @unit @p2
-│     │  │  ├─ CheckoutPage.unit.cy.js  # Single method tests
-│     │  │  └─ LoginPage.unit.cy.js     # No navigation
-│     │  └─ commands/
-│     │     └─ customCommands.unit.cy.js # @regression @unit @p3
-│     │
-│     ├─ integration/              # 20% - API Workflows (1-5s)
-│     │  ├─ cart/
-│     │  │  └─ cartOperations.integration.cy.js    # @regression @integration @p2
-│     │  ├─ checkout/
-│     │  │  └─ checkoutFlow.integration.cy.js      # Mocked APIs
-│     │  └─ auth/
-│     │     └─ loginFlow.integration.cy.js         # @regression @integration @p2
-│     │
-│     └─ e2e/                      # 10% - Full Journeys (10-60s)
-│        ├─ userJourney.e2e.cy.js              # @regression @e2e @p2
-│        ├─ completeCheckout.e2e.cy.js         # Multi-page flows
-│        └─ criticalBusinessPath.e2e.cy.js     # @regression @e2e @p2
-│
-├─ 📄 pages/                       # Page Object Models
+├─ e2e/
+│  ├─ smoke/          # Critical path tests
+│  │  └─ loginTests.cy.js
+│  ├─ sanity/         # Quick health checks
+│  │  └─ cartTests.cy.js
+│  ├─ regression/     # Deep workflow tests
+│  │  └─ checkoutTests.cy.js
+├─ pages/             # Page Object Models
 │  ├─ LoginPage.js
 │  ├─ CartPage.js
-│  └─ CheckoutPage.js
-│
-├─ 🗂️ fixtures/                    # Test Data
-│  ├─ example.json
-│  └─ testData.json
-│
-└─ 🔧 support/                     # Custom Commands
-   ├─ commands.js
-   └─ e2e.js
+│  ├─ CheckoutPage.js
 ```
 
----
+## 📝 Test Categories
 
-## 🎭 Test Categories Explained
+### 🔥 Smoke Tests
+- **Purpose**: Validate critical system functionality
+- **Priority**: High
+- **Tag**: @smoke
+- **Example**: User login, core navigation
+- **Location**: `cypress/e2e/smoke/`
 
-### 💨 Smoke Tests (P0 - Blocker)
-<table>
-<tr>
-<td width="30%"><b>🎯 Purpose</b></td>
-<td>Verify build stability before any detailed testing</td>
-</tr>
-<tr>
-<td><b>⏱️ Duration</b></td>
-<td>2-5 minutes total</td>
-</tr>
-<tr>
-<td><b>📊 Count</b></td>
-<td>5-10 tests</td>
-</tr>
-<tr>
-<td><b>🔄 Frequency</b></td>
-<td>Every commit/PR</td>
-</tr>
-<tr>
-<td><b>✅ Examples</b></td>
-<td>
-• App loads successfully<br>
-• User can login<br>
-• Critical APIs respond<br>
-• Payment gateway reachable
-</td>
-</tr>
-</table>
+### 🔍 Sanity Tests
+- **Purpose**: Quick verification of module updates
+- **Priority**: Medium
+- **Tag**: @sanity
+- **Example**: Cart operations, profile updates
+- **Location**: `cypress/e2e/sanity/`
 
-### 🔍 Sanity Tests (P1 - Critical)
-<table>
-<tr>
-<td width="30%"><b>🎯 Purpose</b></td>
-<td>Quick verification of core features after changes</td>
-</tr>
-<tr>
-<td><b>⏱️ Duration</b></td>
-<td>10-15 minutes total</td>
-</tr>
-<tr>
-<td><b>📊 Count</b></td>
-<td>15-25 tests</td>
-</tr>
-<tr>
-<td><b>🔄 Frequency</b></td>
-<td>Every build</td>
-</tr>
-<tr>
-<td><b>✅ Examples</b></td>
-<td>
-• Login/logout flows<br>
-• Add to cart functionality<br>
-• Search returns results<br>
-• Form validation works
-</td>
-</tr>
-</table>
+### 📊 Regression Tests
+- **Purpose**: Complete workflow validation
+- **Priority**: High
+- **Tag**: @regression
+- **Example**: End-to-end checkout process
+- **Location**: `cypress/e2e/regression/`
 
-### 📊 Regression Tests (P2-P4 - Major to Trivial)
-<table>
-<tr>
-<td width="30%"><b>🎯 Purpose</b></td>
-<td>Comprehensive validation of all features and edge cases</td>
-</tr>
-<tr>
-<td><b>⏱️ Duration</b></td>
-<td>1-2 hours total</td>
-</tr>
-<tr>
-<td><b>📊 Count</b></td>
-<td>100+ tests</td>
-</tr>
-<tr>
-<td><b>🔄 Frequency</b></td>
-<td>Before major releases</td>
-</tr>
-<tr>
-<td><b>✅ Examples</b></td>
-<td>
-• All cart operations (add, remove, update)<br>
-• All checkout scenarios<br>
-• Error handling & edge cases<br>
-• UI validations
-</td>
-</tr>
-</table>
-
----
-
-## 🎪 Test Pyramid Distribution
+## 🎭 Test Pyramid Distribution
 
 ```
-              🔺 E2E Tests (10%)
-            ⚡ 10-15 tests
-          ⏱️  10-60 sec each
-        🎯 Complete user journeys
-      
-         ◀️▶️ Integration Tests (20%)
-       ⚡ 20-30 tests
-     ⏱️  1-5 sec each
-   🎯 API + Component interaction
-   
-🔲🔲🔲🔲 Unit Tests (70%)
-   ⚡ 70-100 tests
-  ⏱️  <100ms each
- 🎯 Isolated methods
+    🔺 E2E (10%)
+   ◀️▶️ Integration (20%)
+🔲🔲🔲🔲 Unit (70%)
 ```
 
-**Why This Distribution?**
-- 🚀 **Fast Feedback Loop** - Most tests run in milliseconds
-- 💰 **Cost Effective** - Unit tests are cheap to maintain
-- 🎯 **Better Coverage** - More granular issue detection
-- 🔄 **Easy Debugging** - Failures are specific and clear
-
----
-
-## 🏷️ Priority Levels
-
-| Priority | Tag | Type | Impact | When to Fix | Examples |
-|----------|-----|------|--------|-------------|----------|
-| **P0** | 🔴 `@p0` | Blocker | App-breaking | Immediately | App won't load, Auth broken |
-| **P1** | 🟠 `@p1` | Critical | Core features fail | Same day | Checkout fails, Payment broken |
-| **P2** | 🟡 `@p2` | Major | Important features | Before release | Discounts not working |
-| **P3** | 🔵 `@p3` | Minor | Less used features | Next sprint | Wishlist issues |
-| **P4** | ⚪ `@p4` | Trivial | Edge cases | Backlog | UI alignment, tooltips |
-
----
+## 🏷️ Test Metadata Structure
+```javascript
+/**
+ * @category: [Smoke|Sanity|Regression]
+ * @type: [Unit|Integration|E2E]
+ * @priority: [High|Medium|Low]
+ * @tags: @smoke, @critical, @feature
+ */
+```
 
 ## 🚀 Running Tests
 
-### 📋 By Test Category
-
+### By Category
 ```bash
-# 💨 Smoke Tests - Critical Path Only (2-5 min)
-npm run test:smoke
+# Smoke Tests
+npx cypress run --env tags=@smoke
 
-# 🔍 Sanity Tests - Core Features (10-15 min)
-npm run test:sanity
+# Sanity Tests
+npx cypress run --env tags=@sanity
 
-# 📊 Full Regression Suite (1-2 hours)
-npm run test:regression
+# Regression Tests
+npx cypress run --env tags=@regression
 ```
 
-### 🎯 By Priority Level
-
+### By Priority
 ```bash
-# 🔴 P0 Only - Blockers
-npm run test:p0
+# High Priority Tests
+npx cypress run --env tags=@high
 
-# 🟠 P0 + P1 - Critical Tests (15-20 min)
-npm run test:critical
-
-# 🟡 P0 + P1 + P2 - High Priority (30-45 min)
-npm run test:high-priority
-
-# 🎪 All Tests - Complete Suite
-npm run test:all
+# Medium Priority Tests
+npx cypress run --env tags=@medium
 ```
 
-### 🏗️ By Test Level
-
+### By Feature
 ```bash
-# ⚡ Unit Tests Only (5-10 min)
-npm run test:unit
+# Login Feature Tests
+npx cypress run --env tags=@login
 
-# 🔗 Integration Tests Only (15-25 min)
-npm run test:integration
+# Cart Feature Tests
+npx cypress run --env tags=@cart
 
-# 🎭 E2E Tests Only (30-60 min)
-npm run test:e2e
+# Checkout Feature Tests
+npx cypress run --env tags=@checkout
 ```
 
-### 🎨 By Feature
+## 🤖 AI-Driven Test Optimization
 
-```bash
-# 🔐 Login Feature Tests
-npm run test:login
+### Auto-Classification Logic
+The AI system categorizes tests based on:
+1. 🎯 Test purpose and scope
+2. 📊 Business impact
+3. 🔄 Execution frequency
+4. ⚡ Performance impact
 
-# 🛒 Cart Feature Tests
-npm run test:cart
+### Smart Tagging System
+- 🏷️ Dynamic tag generation
+- 📋 Automated priority assignment
+- 🎯 Intelligent categorization
+- 🔍 Coverage analysis
 
-# 💳 Checkout Feature Tests
-npm run test:checkout
+## 🔧 Maintenance Guidelines
+
+1. **File Organization**
+   - Keep tests in appropriate category folders
+   - Maintain consistent file naming
+   - Update metadata tags when needed
+
+2. **Code Quality**
+   - Follow Page Object Model pattern
+   - Maintain DRY (Don't Repeat Yourself) principle
+   - Use descriptive test names
+
+3. **Test Distribution**
+   - Monitor test pyramid ratios
+   - Balance coverage across categories
+   - Optimize execution time
+
+## 📈 Benefits
+
+- 🚀 Faster test execution through intelligent categorization
+- 🎯 Better test coverage with pyramid approach
+- 📊 Easier maintenance with clear organization
+- 🔍 Quick issue identification with proper tagging
+- ⚡ Efficient CI/CD integration
+
+## 🎯 Implementation Guide with Prompts
+
+### 🤖 AI Prompts for Test Generation
+
+1. **Test Category Analysis**
+```
+Analyze this test scenario and suggest the appropriate category (smoke/sanity/regression):
+- Scenario: [Describe your test scenario]
+- Business Impact: [High/Medium/Low]
+- Feature Area: [Login/Cart/Checkout/etc.]
+- Execution Time: [Expected duration]
 ```
 
----
-
-## 🤖 AI-Powered Test Generation
-
-### 📝 Using the AI Prompt
-
-1. **Copy the AI Prompt** from the artifacts section
-2. **Paste into your AI assistant** (ChatGPT, Claude, etc.)
-3. **Provide your existing test files**
-4. **Request**: "Analyze and generate test pyramid structure"
-5. **Receive**: Complete categorized test suite in minutes!
-
-### 🎯 What the AI Analyzes
-
-```javascript
-✅ Test patterns and complexity
-✅ Navigation flows (cy.visit, url changes)
-✅ API interactions (cy.intercept, cy.request)
-✅ Dependencies (fixtures, page objects)
-✅ Execution time estimates
-✅ Business impact and priority
-✅ Optimal categorization (smoke/sanity/regression)
+2. **Test Structure Generation**
+```
+Generate a Cypress test structure for:
+- Category: [Smoke/Sanity/Regression]
+- Feature: [Feature name]
+- Test Case: [Test case description]
+- Include: Page Object Model, Test metadata, Tags
 ```
 
-### ⚡ Time Savings Comparison
-
-| Task | Manual Effort | AI-Powered | Time Saved |
-|------|--------------|------------|------------|
-| Analyze 100 tests | 8-10 hours | 5 minutes | **95%** ⚡ |
-| Categorize tests | 4-5 days | 10 minutes | **98%** ⚡ |
-| Create test pyramid | 2-3 weeks | 30 minutes | **99%** ⚡ |
-| Generate new tests | 1-2 days | 15 minutes | **97%** ⚡ |
-| Update test strategy | 3-4 days | 20 minutes | **98%** ⚡ |
-
----
-
-## 📈 CI/CD Integration Strategy
-
-### 🔄 Execution Pipeline
-
-```mermaid
-graph LR
-    A[🔨 Commit] -->|2-5 min| B[💨 Smoke Tests]
-    B -->|Pass| C[✅ Merge]
-    B -->|Fail| D[❌ Block]
-    
-    C -->|Build| E[🔍 Sanity Tests]
-    E -->|10-15 min| F{Pass?}
-    F -->|Yes| G[🚀 Deploy Dev]
-    F -->|No| H[❌ Block Build]
-    
-    G -->|Nightly| I[📊 Regression]
-    I -->|1-2 hours| J[📈 Report]
-    
-    J -->|Release| K[🎯 Full Suite]
-    K -->|Pass| L[🎉 Production]
+3. **Test Optimization Prompt**
+```
+Optimize this test case for:
+- Execution Speed
+- Reliability
+- Maintenance
+- Code: [Paste your test code]
 ```
 
-### ⚙️ Pipeline Configuration
+### 🛠️ Implementation Steps
 
-**Development Phase:**
-```bash
-# Every commit → Smoke tests only
-npm run test:smoke  # ⏱️ 2-5 min
+1. **Setting Up Test Structure**
+   ```javascript
+   // cypress/e2e/[category]/[featureName].cy.js
+   import { [PageName] } from '../../pages/[PageName]'
+
+   describe('[Feature] Tests', () => {
+     beforeEach(() => {
+       // Setup code
+     })
+
+     it('[test description]', () => {
+       // Test implementation
+     })
+   })
+   ```
+
+2. **Creating Page Objects**
+   ```javascript
+   // cypress/pages/[PageName].js
+   class [PageName] {
+     // Page elements
+     elements = {
+       element1: () => cy.get('[selector]'),
+       element2: () => cy.get('[selector]')
+     }
+
+     // Page actions
+     action1() {
+       return this.elements.element1().click()
+     }
+   }
+
+   export default new [PageName]()
+   ```
+
+3. **Adding Test Metadata**
+   ```javascript
+   /**
+    * @category Smoke
+    * @type E2E
+    * @priority High
+    * @tags @smoke, @login, @critical
+    */
+   describe('Login Feature', () => {
+     // Test implementation
+   })
+   ```
+
+### 🤖 AI-Driven Test Generation Process
+
+1. **Use the Category Analysis Prompt** to determine test placement
+2. **Apply the Structure Generation Prompt** to create test skeleton
+3. **Implement the test** following the code templates
+4. **Use the Optimization Prompt** to refine the implementation
+5. **Add metadata and tags** based on AI suggestions
+
+## 🎭 Actual Prompts Used in Development
+
+### 1. Initial Framework Analysis and Implementation Prompt
+```
+You are an expert QA Automation Architect specializing in the Cypress Testing Framework and AI-driven Test Suite Optimization using the Test Pyramid (Unit, Integration, E2E) principle.
+
+Analyze the following Cypress test suite and automatically organize existing tests into categorized folders (smoke, sanity, regression) and tag them by type and priority.
+
+🧩 Classification Rules
+
+Smoke Tests
+- Validate essential user flows that determine if the app is working.
+- Examples: login, home page navigation, product listing.
+- Tag as: @smoke, Priority: High
+
+Sanity Tests
+- Quick checks for modules recently updated.
+- Examples: add to cart, remove from cart, update profile.
+- Tag as: @sanity, Priority: Medium
+
+Regression Tests
+- Deep and complete coverage for business-critical workflows.
+- Examples: checkout flow, payment, order confirmation.
+- Tag as: @regression, Priority: High
+
+🧪 Test Pyramid Alignment
+- Unit (70%) → Page object method-level validations.
+- Integration (20%) → Interaction between modules (e.g., Login + Cart).
+- E2E (10%) → Full user journey (e.g., Checkout flow).
+
+Test Metadata Format:
+// @category: Smoke
+// @type: E2E
+// @priority: High
+
+📁 Target Folder Structure:
+cypress/
+├─ e2e/
+│  ├─ smoke/
+│  │  └─ loginTests.cy.js
+│  ├─ sanity/
+│  │  └─ cartTests.cy.js
+│  ├─ regression/
+│  │  └─ checkoutTests.cy.js
+├─ pages/
+│  ├─ LoginPage.js
+│  ├─ CartPage.js
+│  ├─ CheckoutPage.js
+
+⚙️ Deliverables:
+1. Move *.cy.js files into appropriate folders
+2. Add AI-generated metadata tags
+3. Create test summary table
+4. Ensure test maintainability
+5. Provide sample Cypress run commands
 ```
 
-**Pull Request:**
-```bash
-# PR validation → Smoke + Critical
-npm run test:smoke && npm run test:critical  # ⏱️ 15-20 min
+### 2. Framework Setup Prompt
+```
+Create a comprehensive Cypress test automation framework with:
+- AI-driven test categorization (smoke, sanity, regression)
+- Page Object Model implementation
+- Test pyramid approach
+- Smart tagging system
+- Clear folder structure
+Provide the complete folder structure and implementation details.
 ```
 
-**Build:**
-```bash
-# After merge → Smoke + Sanity
-npm run test:smoke && npm run test:sanity  # ⏱️ 20-25 min
+### 2. Test Category Structure Prompt
+```
+Design a test categorization strategy that:
+- Follows the Test Pyramid principle
+- Implements smoke, sanity, and regression test categories
+- Includes proper tagging and metadata
+- Optimizes test execution and maintenance
+Provide the folder structure and metadata format.
 ```
 
-**Nightly:**
-```bash
-# Scheduled → Full Regression
-npm run test:regression  # ⏱️ 1-2 hours
+### 3. Page Object Generation Prompt
+```
+Create a Page Object Model structure for:
+- Login functionality
+- Shopping cart operations
+- Checkout process
+Include element locators, actions, and verification methods.
 ```
 
-**Release:**
-```bash
-# Before production → Everything
-npm run test:all  # ⏱️ 2-3 hours
+### 4. Test Case Generation Prompt
+```
+Generate Cypress test cases for [feature] that:
+- Follow the appropriate test category (smoke/sanity/regression)
+- Use the Page Object Model
+- Include proper tags and metadata
+- Implement best practices for reliability and maintenance
 ```
 
----
-
-## 📊 Test Metadata Example
-
-```javascript
-/**
- * 🏷️ Test Metadata
- * 
- * @category: Smoke
- * @type: E2E
- * @priority: P0
- * @tags: @smoke, @critical, @auth, @p0, @e2e
- * @duration: ~30 seconds
- * @frequency: Every commit
- * @impact: Application Breaking
- * 
- * @description: Validates critical authentication path
- * ensuring users can access the application
- */
-
-describe('User Authentication - Smoke Test', { tags: ['@smoke', '@p0', '@e2e'] }, () => {
-  it('should allow valid user to login successfully', { priority: 'P0' }, () => {
-    cy.visit('/login');
-    cy.get('[data-cy="username"]').type('testuser');
-    cy.get('[data-cy="password"]').type('password123');
-    cy.get('[data-cy="login-btn"]').click();
-    cy.url().should('include', '/dashboard');
-    cy.contains('Welcome').should('be.visible');
-  });
-});
+### 5. Test Optimization Prompt
+```
+Optimize the test suite for:
+- Execution speed
+- Reliability
+- Maintainability
+- Code reusability
+Provide specific recommendations and code examples.
 ```
 
----
-
-## 🎨 Decision Matrix for Test Categorization
-
-| Criteria | 💨 Smoke | 🔍 Sanity | 📦 Unit | 🔗 Integration | 🎭 E2E |
-|----------|----------|-----------|---------|----------------|--------|
-| **Navigation** | 1 page | 1-2 pages | None | 1-2 pages | 3+ pages |
-| **API Calls** | Check only | Verify | None | Mocked | Real/Full |
-| **Duration** | <30s | <2min | <100ms | 1-5s | 10-60s |
-| **Scope** | Critical | Core features | Single method | Workflow | Journey |
-| **Frequency** | Every commit | Every build | Before release | Before release | Before release |
-| **Priority** | P0 | P1 | P2-P4 | P2-P3 | P2-P4 |
-| **Failure** | Block deploy | Block build | Fix before release | Fix before release | Fix before release |
-
----
-
-## 🛠️ Setup & Configuration
-
-### 📦 Installation
-
-```bash
-# Clone the repository
-git clone <your-repo-url>
-
-# Install dependencies
-npm install
-
-# Install Cypress grep plugin (for tag filtering)
-npm install -D @cypress/grep
+### 6. Documentation Generation Prompt
+```
+Create comprehensive documentation for the framework that includes:
+- Project structure explanation
+- Test categorization details
+- Implementation guidelines
+- Maintenance best practices
+- Running tests instructions
+Use proper markdown formatting with emojis for better readability.
 ```
 
-### ⚙️ Cypress Configuration
-
-```javascript
-// cypress.config.js
-const { defineConfig } = require('cypress');
-
-module.exports = defineConfig({
-  e2e: {
-    baseUrl: 'http://localhost:3000',
-    setupNodeEvents(on, config) {
-      require('@cypress/grep/src/plugin')(config);
-      return config;
-    },
-    env: {
-      grepFilterSpecs: true,
-      grepOmitFiltered: true
-    },
-    specPattern: 'cypress/e2e/**/*.cy.{js,jsx,ts,tsx}',
-    video: false,
-    screenshotOnRunFailure: true
-  }
-});
-```
-
-### 📝 Package.json Scripts
-
-```json
-{
-  "scripts": {
-    "test:smoke": "cypress run --spec 'cypress/e2e/smoke/**/*.cy.js' --env grepTags=@smoke",
-    "test:sanity": "cypress run --spec 'cypress/e2e/sanity/**/*.cy.js' --env grepTags=@sanity",
-    "test:regression:unit": "cypress run --spec 'cypress/e2e/regression/unit/**/*.cy.js'",
-    "test:regression:integration": "cypress run --spec 'cypress/e2e/regression/integration/**/*.cy.js'",
-    "test:regression:e2e": "cypress run --spec 'cypress/e2e/regression/e2e/**/*.cy.js'",
-    "test:regression": "npm run test:regression:unit && npm run test:regression:integration && npm run test:regression:e2e",
-    "test:p0": "cypress run --env grepTags=@p0",
-    "test:critical": "cypress run --env grepTags='@p0,@p1'",
-    "test:high-priority": "cypress run --env grepTags='@p0,@p1,@p2'",
-    "test:all": "cypress run",
-    "test:login": "cypress run --env grepTags=@login",
-    "test:cart": "cypress run --env grepTags=@cart",
-    "test:checkout": "cypress run --env grepTags=@checkout",
-    "cypress:open": "cypress open"
-  }
-}
-```
-
----
-
-## 🎯 Best Practices
-
-### ✅ DO's
-
-- ✅ **Keep tests focused** - One test, one assertion concept
-- ✅ **Use descriptive names** - Test name should explain what it does
-- ✅ **Follow Page Object Model** - Centralize selectors
-- ✅ **Tag appropriately** - Use all relevant tags
-- ✅ **Mock external APIs** - For unit and integration tests
-- ✅ **Maintain test independence** - Tests should not depend on each other
-- ✅ **Update metadata** - When test scope changes
-
-### ❌ DON'Ts
-
-- ❌ **Don't mix test levels** - Unit test shouldn't navigate pages
-- ❌ **Don't over-test** - Avoid redundant tests
-- ❌ **Don't hardcode data** - Use fixtures
-- ❌ **Don't skip test cleanup** - Always reset state
-- ❌ **Don't ignore failing tests** - Fix or remove
-- ❌ **Don't create god tests** - Break down complex tests
-
----
-
-## 📚 Resources & Documentation
-
-### 🔗 Official Documentation
-- [Cypress Documentation](https://docs.cypress.io)
-- [Cypress Best Practices](https://docs.cypress.io/guides/references/best-practices)
-- [Page Object Pattern](https://www.cypress.io/blog/2019/01/03/stop-using-page-objects-and-start-using-app-actions/)
-
-### 📖 Testing Concepts
-- [Test Pyramid by Martin Fowler](https://martinfowler.com/articles/practical-test-pyramid.html)
-- [Smoke vs Sanity vs Regression Testing](https://www.guru99.com/smoke-sanity-testing.html)
-- [Test Prioritization Strategies](https://www.browserstack.com/guide/test-case-prioritization)
-
-### 🤖 AI Resources
-- [AI in Test Automation](https://www.testim.io/blog/ai-in-test-automation/)
-- [ChatGPT for QA](https://www.ministryoftesting.com/articles/chatgpt-for-testers)
-
----
+These prompts were iteratively used with GitHub Copilot to develop different aspects of the framework, ensuring a comprehensive and well-structured test automation solution.
 
 ## 🤝 Contributing
 
-We welcome contributions! Here's how you can help:
+1. Follow the existing folder structure
+2. Add appropriate metadata tags
+3. Update test distribution metrics
+4. Maintain the test pyramid balance
 
-1. 🍴 **Fork the repository**
-2. 🌿 **Create a feature branch** (`git checkout -b feature/AmazingFeature`)
-3. ✍️ **Commit your changes** (`git commit -m 'Add some AmazingFeature'`)
-4. 🚀 **Push to the branch** (`git push origin feature/AmazingFeature`)
-5. 🎯 **Open a Pull Request**
+## 📖 Resources
 
-### 📋 Contribution Guidelines
+- [Cypress Documentation](https://docs.cypress.io)
+- [Page Object Pattern](https://www.cypress.io/blog/2019/01/03/stop-using-page-objects-and-start-using-app-actions/)
+- [Test Pyramid](https://martinfowler.com/articles/practical-test-pyramid.html)
 
-- Follow existing folder structure
-- Add appropriate metadata and tags
-- Update test distribution metrics
-- Maintain test pyramid balance
-- Include tests for new features
-- Update documentation
+## 📝 License
 
----
+MIT License - feel free to use and modify for your projects!
 
-## 📊 Project Stats
+## Author
 
-<div align="center">
-
-| Metric | Value |
-|--------|-------|
-| 🎯 Test Coverage | 85%+ |
-| ⚡ Unit Tests | 70% |
-| 🔗 Integration Tests | 20% |
-| 🎭 E2E Tests | 10% |
-| 💨 Smoke Tests | 5-10 |
-| 🔍 Sanity Tests | 15-25 |
-| 📊 Regression Tests | 100+ |
-| ⏱️ Avg Execution (Full) | 1-2 hours |
-| ⏱️ Avg Execution (Smoke) | 2-5 min |
-| 🚀 Time Saved by AI | 95%+ |
-
-</div>
-
----
-
-## 🏆 Success Metrics
-
-### Before Implementation
-- ❌ Unorganized test structure
-- ❌ Long feedback loops (2+ hours)
-- ❌ Difficult to maintain
-- ❌ Unclear test priorities
-- ❌ Slow CI/CD pipeline
-
-### After Implementation
-- ✅ Crystal clear organization
-- ✅ Fast feedback (<5 min for critical path)
-- ✅ Easy to maintain and scale
-- ✅ Clear priority system (P0-P4)
-- ✅ Optimized CI/CD (70% faster)
-
----
-
-## 📞 Support
-
-Need help? Here's how to get support:
-
-- 📧 **Email**: [your-email@example.com]
-- 💬 **Issues**: [GitHub Issues](https://github.com/your-repo/issues)
-- 📖 **Wiki**: [Project Wiki](https://github.com/your-repo/wiki)
-- 💡 **Discussions**: [GitHub Discussions](https://github.com/your-repo/discussions)
-
----
-
-## 📜 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 👨‍💻 Author
-
-<div align="center">
-
-### **Saran Kumar**
-
-*"Transforming weeks of manual work into minutes with AI-powered test automation"*
-
----
-
-### 🌟 If this project helped you, give it a ⭐!
-
-**Made with ❤️ and 🤖 AI**
-
-</div>
-
----
-
-<div align="center">
-
-### 🚀 Ready to Transform Your Test Suite?
-
-**Get Started Now** → Copy the [AI Prompt](#-ai-powered-test-generation) and let AI do the heavy lifting!
-
-*Remember: What takes weeks manually, takes minutes with AI* ⚡
-
----
-
-**Last Updated**: October 2025 | **Version**: 2.0.0 | **Status**: 🟢 Active
-
-</div>
+Saran Kumar
